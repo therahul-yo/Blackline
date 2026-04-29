@@ -72,8 +72,9 @@ The CPU usage is calculated using all available fields from `/proc/stat`:
 This provides accurate CPU usage even under I/O or VM load.
 
 ## Cross-Platform Support
-- On Linux the tool reads `/proc/meminfo`, `/proc/stat`, and `/proc/net/dev`
-- On non-Linux platforms it exits with: "Unsupported platform: blackline only supports Linux"
+- **Linux**: Reads `/proc/meminfo`, `/proc/stat`, and `/proc/net/dev`.
+- **macOS**: Uses `sysctl`, `vm_stat`, `top`, `pmset`, and `netstat`.
+- Other platforms: Currently unsupported.
 
 ## Development
 ```bash
